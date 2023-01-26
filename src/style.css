@@ -1,0 +1,334 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Mukta', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap');
+@font-face {
+    font-family: 'Mukta';
+    src: url('../font/Mukta-Regular.ttf');
+  }
+
+.wrap{
+    background-color: #031923;
+    background-image: url('../img/BG\ Vector.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.header {
+    position: relative;
+    z-index: 2;
+    background-color: #031923;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    
+}
+.header::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #00E0FF;
+    animation: border-anim 3s, linear, infinite;
+}
+@keyframes border-anim {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+}
+.header-content {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #00E0FF;
+}
+.img-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+img {
+    width: 100%;
+}
+.game-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#count {
+    color: #00E0FF;
+    font-size: 32px;
+}
+.counter-block {
+    margin-right: 20px;
+}
+.main {
+    
+}
+.main-content {
+    display: none;
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.list-item {
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.list-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 3px;
+    background-color: #00E0FF;
+    border-radius: 10px;  
+}
+.move-anim{
+    offset-path: path('m 0 0 h 195 v 195 h -195 L 0 0');
+    offset-rotate: reverse;
+    animation: move 5s linear infinite;
+}
+@keyframes move {
+    100% { 
+        offset-distance: 100%;
+        width: 50px;
+    }
+}
+
+#test{
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+}
+.fruit {
+    width: 60%;
+}
+#test{
+    cursor: url(../img/knife.png), pointer;
+}
+
+.game-over-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    position: relative;
+    display: none;
+}
+
+.game-over-block p{
+    font-weight: 800;
+    font-family: 'Rubik Beastly', cursive;
+    text-align: center;
+    color: #fff;
+}
+.game-over{
+    font-size: 64px;
+    position: relative;
+    top:-116px;
+}
+.hide{
+    animation: hide ease 10s infinite;
+    animation-delay: 1,6s;
+    opacity: 1;
+}
+
+.show{
+    animation: show ease 10s infinite;
+    animation-delay: 2s;
+    opacity: 0;
+}
+.try-again {
+    position: relative;
+    font-size: 40px;
+    top: -185px;
+    opacity: 0;
+    cursor: pointer;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    80%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+@keyframes hide {
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.start-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+}
+.orbita{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 80px;
+    height: 213px;
+    border-radius: 50%;
+    position: absolute;
+    top: -31px;
+    left: 45%;
+}
+.orbita::after{
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 80px;
+    height: 213px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: rotate(130deg);
+}
+.start-btn {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.start-btn button{
+    color: #00E0FF;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.start-btn:after{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #00E0FF;
+    top: 70px;
+    left: 67px;
+    border-radius: 50%;
+    animation: anim5 3s linear infinite;
+}
+.start-btn:before{
+    position: absolute;
+    content: '';
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 96px;
+    height: 212px;
+    border-radius: 50%;
+    left: 32px;
+    top: -26px;
+    transform: rotate(45deg);
+}
+@keyframes anim5 {
+    from {
+        transform: rotate(0deg)
+                   translate(-80px);
+        }
+        to {
+                transform: rotate(360deg)
+                        translate(-80px);
+        }
+}
+
+.victory-block {
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    display: none;
+    position: relative;
+}
+.victory-block p{
+    cursor: pointer;
+    color: #fff;
+    font-size: 44px;
+}
+.victory-block::after{
+    content: '';
+    background-image: url('../img/rockets_PNG13289.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    offset-path: path('M 0,0 s52.87-70.07,101.25-.75,101.75-6.23,101.75-6.23S246.38,5.59,165.33,9.08s-15,71.57-94.51,74.56S18.45,58.46,18.45,58.46Z');
+    offset-rotate: reverse;
+    animation: move3 5s linear infinite;
+}
+@keyframes move3 {
+    100% { 
+        offset-distance: 100%;
+    }
+}
